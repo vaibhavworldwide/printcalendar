@@ -1,0 +1,679 @@
+*{
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+/*==================================
+Remove default style of anchor tag
+==================================*/
+a{
+	color: #00A0C6;
+	
+    text-decoration: none;
+}
+a:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+/* Header/logo Title */
+.header {
+  background-color: #3b5998;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+.menu{
+  display:flex;
+  justify-content: space-between;
+  color:white;
+ 
+}
+.menu-container{
+  background-color: #3b5998;
+  width:100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+.search {
+  padding: 6px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 17px;
+  border: none;
+}
+.search-container{
+  display: none;
+}
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.active{
+  padding-top: 17px;
+  background-color: #3498DB;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px
+}
+.active a{
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 20px 0px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* navbar styling: */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color:#3b5998;
+  overflow-x: hidden;
+  transition: 0.7s;
+  padding-top: 60px;
+  box-shadow: 0px 0px 200px 0 rgba(0, 0, 0, 0.8);
+}
+
+.sidenav a {
+  text-align: center;
+  padding: 12px 12px 12px 12px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.7s;
+}
+
+.sidenav a:hover {
+  background-color:#3498DB ;
+  color: #fff ;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.dropbtn {
+  outline: none;
+  border:none;
+  background-color: #3b5998;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dropbtn:hover {
+  background-color: #3498DB;
+}
+
+.dropdown {
+  position: relative;
+  display: grid;
+}
+
+.dropdown-content {
+  display: none;
+  position: inherit;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+#dropdown-holiday{
+  width: 100%;
+  height: 141px;
+}
+
+
+#dropdown-dates{
+  width: 100%;
+  height: 141px;
+}
+
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+.search-container-menu{
+ display: block;
+ 
+ margin-top: 15px;
+}
+.search-container-menu input{
+  width: 100%;
+}
+.search-container-menu button{
+  padding: 6px 10px;
+  width: 100%;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+ 
+}
+@media (min-width: 800px) {
+  .search-container-menu{
+    display: none;
+  }
+  .search-container{
+    display: block;
+  }
+}
+/* date styling */
+.thisDate{
+text-align: center;
+color: #032a7e;
+font-size:xx-large;
+font-weight: bolder;
+text-transform: uppercase;
+text-shadow: 2px 2px #dbdada;
+
+}
+.thisDate h2{
+  font-family: monospace;
+}
+
+/* calendar: */
+.display{
+  display:none;
+}
+#yearView{
+  height:auto;
+  overflow:auto;
+}
+@media (min-width: 600px) {
+
+}
+.yearlyTitle{
+  text-align: center;
+}
+.yearlyButton{
+  display: flex;
+  justify-content: space-around;
+}
+.yearlyButton button{
+  border: none;
+  background-color: #3b5998;
+  color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  outline:none;
+  margin: 1%;
+  box-shadow: 0 4px 4px #888888;
+}
+#calen{
+  
+  width: 100%;
+  height:100%;
+  overflow:auto;
+}
+
+#m-calen{
+  width: 67.50%;
+  height: auto;
+  overflow: auto;
+  padding: 20px;
+  display: inline-block;
+}
+@media (max-width:800px) {
+ #m-calen{width: 100%;}
+}
+
+.weekdays {
+  background-color: #27ae60;
+  color: #fff;
+  padding: 7px 0;
+  display: flex;
+}
+.month {
+  width: 100%;
+  height: 550px;
+  margin: 1.6%;
+	background: #fff;
+	position: relative;
+	overflow: hidden;
+  float: left;
+  box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.2);
+}
+.titlecontainer{
+    width: 100%;
+    padding: 40px 30px;
+    text-align: center;
+    background-color: #3b5998;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.month h3 {
+	text-align: center;
+	margin: -2px 0 0 0;
+	padding: 40px 30px;
+	background:#3b5998;
+	color: #fff;
+}
+
+.dow{
+  text-align: center;
+  width: 12.7864%;
+  margin-left: 1.5%;
+}
+.days{
+font-weight: 300;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.today{
+  background-color: #27ae60;
+  color: #fff;
+}
+.days div{
+  text-align: center;
+  width: 12.7864%;
+  margin-left: 1.45%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.dummy-day {
+	color: #ccc;
+}
+/*event calendar:*/
+.eventtitle{
+  padding: 30px;
+  background-color: #3b5998;
+  text-align: center;
+  color: white;
+}
+.dateSwitchContainer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center
+}
+.switchButton{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 23px;
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: all 0.4s;
+}
+.eventdate{
+  padding-bottom: 10px;
+}
+#eventCalendarContainer{
+ display: none;
+ width: 25%;
+ height: 550px;
+ padding-top: 29px;
+}
+@media (min-width: 800px){
+  #eventCalendarContainer{
+    display: block;
+  }
+}
+.elementcontainer{
+  height: 550px;
+  box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.2);
+}
+#monthView{
+  display: flex;
+  justify-content: space-around;
+}
+.dayDate{
+  display: flex;
+  justify-content: space-around;
+  background-color: #27ae60;
+  color: #fff;
+  height: 48.082px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 3%;
+}
+.daycontnr{
+  padding-top: 4px;
+}
+/* end of calender styling: */
+.container {
+  width: 80%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: auto;
+  margin-bottom: 4%;
+}
+@media (max-width: 480px) and (min-width: 320px) {
+  .container{
+    width: 96%;
+  }
+ }
+.dates{
+  background-color: #3b5998;
+  text-align: center;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.tbl-box{
+  padding-bottom:  20px;
+}
+.Clndr-cntr{
+  padding-top: 10px;
+}
+.footer-container{ 
+  overflow: hidden;
+  background-color: #3b5998;
+}
+.footer{
+  color: white;
+  text-align: center;
+  width: 100%;
+ height: auto;
+ margin: 0 auto;
+}
+.footer a{
+  color: #fff;
+  text-decoration: none;
+  padding-top: 20px;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  margin-left: 4px;
+  border-radius: 50%;
+}
+.fa-facebook {
+  background:#fff ;
+  color: #3B5998 !important ;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  margin-right: 4px;
+  border-radius: 50%;
+}
+
+
+/* footer sec styling ends here */
+
+.txt,.tel, .select, .txt-area {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+.form{
+  padding-top:8%;
+  padding-left:8%;
+  padding-right:8%;
+}
+
+.submit {
+  background-color: #3b5998;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: #3498DB;
+}
+.about{
+  padding-top: 20px;
+  margin-top: 8%;
+  text-align: center;
+  color: white;
+  background-color: #3b5998;
+}
+.about p{
+  padding: 5%;
+}
+
+
+
+/* School calendar  styling:*/
+.schoolContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.schoolContainer>div {
+  flex: 0 50%;
+  box-sizing:border-box;
+}
+@media (max-width:850px){
+  .schoolContainer{
+    display: block;
+  }
+}
+@media (max-width:850px){
+.schoolContainer>div{
+  width: 100%;
+  text-align: center;
+}
+}
+.monthlySC{
+  padding:2%;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-bottom: 5%;
+}
+.textBox{
+  width: 82%;
+  
+  padding-left: 1%;
+}
+.textBox{
+   padding-top: 9%; 
+}
+.sctitle{
+  text-align: center;
+  margin-bottom: 3%;
+  text-decoration: underline;
+}
+.align{
+  padding-top: 20%;
+}
+/* Difference between two dates: */
+#reset{
+  float: right;
+  outline: none;
+}
+#diff{
+  background-color: #3b5998;
+  color: #fff;
+}
+.diffHeadr{
+  text-align: center;
+  padding: 1%;
+}
+.diffStart{
+  display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1%;
+}
+
+
+
+.diffSubmit{
+  text-align: center;
+}
+#diffSubmit{
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+
+.diffText{
+  padding: 10px;
+}
+@media (max-width:800px){
+  .diffStart{
+   display: block;
+  }
+  .diffStart div{
+    padding: 20px;
+  }
+  }
+/* Holidays: */
+.nextyr{
+  text-align: right;
+  padding-right: 10%;
+  padding-bottom: 5%;
+}
+.nextyr a{
+  background-color:#888888;
+  color: white;
+  padding: 4px;
+}
+.holidyContainer{
+  background-color: #3b5998;
+  color: rgb(3, 3, 3);
+  text-align: center;
+  padding: 1%;
+}
+
+.hoildyHead{
+  background-color:  rgb(220,220,220);
+}
+.holidyContent{
+  background-color:rgba(220,220,220,0.3) ;
+}
+.holiBox{
+  padding: 1%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* world clock: */
+.hrow{
+  background-color: #3b5998;
+  color: #fff;
+}
+.timerow{
+  background-color:#dddddd;
+}
+.wctd{
+  border: none;
+  text-align: center;
+}
+
+/* yearly download: */
+.yearButton{
+  display: flex;
+  justify-content: space-around;
+}
+.yearButton button{
+  outline: none;
+  border: none;
+  background-color: #888888;
+  color: #fff;
+}
+.yearDownload{
+  background-color: #f1f1f1;
+  padding: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/*=====================================
+	Fiilter Box
+=====================================*/	
+input[type="text"], input[type="password"], textarea, select { 
+    outline: none;
+}
+#myuly{
+	width:30%;
+	position: absolute;
+}
+#myuly td{
+	padding: 10px;
+    border-bottom: 2px solid #3b5998;
+}
+.search-table{
+	display:flex;
+	justify-content:flex-end;
+}
+#myInput{
+	height:50px;
+	border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 44px;
+}
+.filter-container{
+	width:100%;
+	display:flex;
+	justify-content: space-between;
+	padding: 2% 5%;
+	background: aliceblue;
+	align-items:center;
+}
+
+@media only screen and (max-width: 420px) and (min-width: 320px) {
+ .filter-container h2{
+	 font-size: 10px;
+ }
+}
+@media only screen and (max-width: 600px) and (min-width: 421px) {
+ .filter-container h2{
+	 font-size: 13px;
+ }
+}
+@media only screen and (max-width: 700px) and (min-width: 601px) {
+ .filter-container h2{
+	 font-size: 18px;
+ }
+}
